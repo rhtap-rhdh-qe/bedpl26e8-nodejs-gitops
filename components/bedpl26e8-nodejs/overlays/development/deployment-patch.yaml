@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: bedpl26e8-nodejs
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/rhtap-task-runner:latest
-        name: container-image  
+        - image: quay.io/rhtap_qe/rhtap-qe-nodejs:a05ccd0e40e1d7328d08626c9c8c5393a3fd97e5@sha256:2b24bae62b38909f3d1caf682d0c8add028ec8362b48d4906b9602eaa33d9e97
+          name: container-image
